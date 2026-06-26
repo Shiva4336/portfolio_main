@@ -1,0 +1,33 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling and proper section spacing */
+main > section {
+  position: relative;
+}
+
+/* Glass card inner content sizing fix */
+.glass-card-content {
+  height: 100%;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .glass-card-content {
+    padding: 20px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+  
+  .animate-glow-pulse {
+    animation: none;
+  }
+  
+  .animate-pulse-dot {
+    animation: none;
+  }
+}
