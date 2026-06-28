@@ -6,7 +6,6 @@ import { Award } from 'lucide-react';
 import {
   Coffee,
   FileCode,
-  Globe,
   Database,
   Layout,
   GitBranch,

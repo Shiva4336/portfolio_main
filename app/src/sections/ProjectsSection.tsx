@@ -80,13 +80,21 @@ const ProjectsSection: React.FC = () => {
             <div key={project.title} className="project-card-wrapper">
               <GlassCard className="h-full" padding="0">
                 <div className="h-full flex flex-col">
-                  {/* Project image */}
+                  {/* Project image - unchanged project content with coming soon overlay */}
                   <div className="relative h-[200px] overflow-hidden rounded-tl-[20px] rounded-tr-[20px]">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover blur-[5px] scale-105"
                     />
+
+                    <div className="absolute inset-0 bg-black/45 flex items-center justify-center">
+                      <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(255,45,117,0.35)]">
+                        <span className="text-white text-lg font-bold tracking-wide">
+                          🚧 Coming Soon
+                        </span>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -113,18 +121,18 @@ const ProjectsSection: React.FC = () => {
                       ))}
                     </div>
 
-                    {/* Action buttons */}
-                    <div className="flex items-center gap-3 mt-4">
+                    {/* Action buttons disabled until projects are ready */}
+                    <div className="flex items-center gap-3 mt-4 opacity-50 pointer-events-none">
                       <button
-                        className="flex items-center gap-2 text-sm font-medium text-white/50 px-4 py-2 rounded-lg transition-all duration-300 hover:text-neon-pink hover:border-neon-pink"
+                        className="flex items-center gap-2 text-sm font-medium text-white px-4 py-2 rounded-lg"
                         style={{
-                          border: '1px solid rgba(255, 45, 117, 0.3)',
+                          border: '1px solid rgba(255, 255, 255, 0.25)',
                         }}
                       >
                         <Github size={16} />
                         View Code
                       </button>
-                      <button className="flex items-center gap-2 text-sm font-semibold text-neon-pink transition-all duration-300 hover:translate-x-1">
+                      <button className="flex items-center gap-2 text-sm font-semibold text-white">
                         Live Demo
                         <ExternalLink size={14} />
                       </button>

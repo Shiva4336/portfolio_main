@@ -5,7 +5,6 @@ import SectionTitle from '@/components/SectionTitle';
 import {
   Code,
   Smartphone,
-  Palette,
   Zap,
   ShoppingCart,
   Server,
